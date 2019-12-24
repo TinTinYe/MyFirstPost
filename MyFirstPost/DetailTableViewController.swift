@@ -121,11 +121,36 @@ class DetailTableViewController: UITableViewController {
     }
     */
 
-
-
+    
+   
+    
+    
+    
+//按下DoneButton後讀取資料
+        
+    @IBAction func DoneButtonPressed(_ sender: Any) {
+        
+        
+//        if nameTextField.text?.isEmpty == true{
+//            let controller = UIAlertController(title: "記得填上名字哦", message: nil, preferredStyle: .alert)
+//            controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//            present(controller,animated: true,completion: nil)
+//            return
+//    }
+//    // 收起鍵盤
+//    self.view.endEditing(true)
+    // 從UI元件取得訂單資料
+           
+        print(nameTextField.text ?? "" )
+        print(drinkLabel.text)
+        print(priceLabel.text)
+        
+        
+        
+        
+        
 
 }
 
-
-
+}
 

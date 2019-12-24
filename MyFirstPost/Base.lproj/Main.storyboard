@@ -274,7 +274,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Jq4-MA-zVZ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="dOp-e1-sTd"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="dOp-e1-sTd">
+                            <connections>
+                                <action selector="DoneButtonPressed:" destination="oqb-ET-M5u" id="fJ7-na-1A2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="drinkLabel" destination="zub-Tf-UAT" id="ue5-6j-nW2"/>
@@ -287,7 +291,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvK-PA-oOM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3528.985507246377" y="339.50892857142856"/>
+            <point key="canvasLocation" x="3303" y="311"/>
         </scene>
         <!--MENU-->
         <scene sceneID="Y5P-O0-383">
