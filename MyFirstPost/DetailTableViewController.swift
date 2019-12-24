@@ -34,7 +34,8 @@ class DetailTableViewController: UITableViewController {
      
     @IBOutlet weak var iceSegementControl: UISegmentedControl!
     
-    
+   
+ //   let confirmOrder: [String : String] = ["customer": Order.customer, "drinks": Order.drinks, "size": Order.size, "sugar": Order.sweet.rawValue, "ice": Order.ice,  "price": Order.price]
     
     
     
@@ -131,26 +132,97 @@ class DetailTableViewController: UITableViewController {
     @IBAction func DoneButtonPressed(_ sender: Any) {
         
         
-//        if nameTextField.text?.isEmpty == true{
-//            let controller = UIAlertController(title: "記得填上名字哦", message: nil, preferredStyle: .alert)
-//            controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            present(controller,animated: true,completion: nil)
-//            return
-//    }
+   if  nameTextField.text?.isEmpty == true{
+            let controller = UIAlertController(title: "記得填上名字哦", message: nil, preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(controller,animated: true,completion: nil)
+            return
+    }
 //    // 收起鍵盤
-//    self.view.endEditing(true)
+    self.view.endEditing(true)
     // 從UI元件取得訂單資料
            
         print(nameTextField.text ?? "" )
-        print(drinkLabel.text)
-        print(priceLabel.text)
+        print(drinkLabel.text!)
+        print(priceLabel.text!)
         
         
+        order.customer = nameTextField.text ?? ""
+        order.drinks = drinkLabel.text!
+        order.price = priceLabel.text!
         
-        
+        if sizeSegmentControl.selectedSegmentIndex == 0 {
+                       order.size = "中杯"
+                   }else {
+                       order.size = "大杯"
+                   }
+                   print("容量：\(order.size)")
         
 
+         switch sweetSegmentControl.selectedSegmentIndex {
+                   case 0:
+                    order.sweet = .regular
+                   case 1:
+                       order.sweet = .lessSuger
+                   case 2:
+                       order.sweet = .halfSuger
+                   case 3:
+                       order.sweet = .quarterSuger
+                   case 4:
+                       order.sweet = .sugerFree
+                   default:
+                       break
+                   }
+        print("sweet：\(order.sweet.rawValue)")
+        
+        switch iceSegementControl.selectedSegmentIndex {
+        case 0:
+            order.ice = .regular
+        case 1:
+            order.ice = .moreIce
+        case 2:
+                order.ice = .easyIce
+        case 3:
+                order.ice = .iceFree
+        case 4:
+                order.ice = .completelyiceFree
+        case 5:
+            order.ice = .hot
+        default:
+            break
+        }
+         print("ice：\(order.ice.rawValue)")
+
+// 上傳
+        
+        
+        let url = URL(string:"https://sheetdb.io/api/v1/icvwy5qpnfi6b")
+        var urlRequest = URLRequest(url: url!)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json",forHTTPHeaderField: "Content-Type")
+        
+        
+        let confirmOrder: [String:String] = ["customer":order.customer,"drinks":order.drinks,"ice":order.ice.rawValue,"price":order.price,"size":order.size,"sweet":order.sweet.rawValue]
+        let postData: [String:Any] = ["data": confirmOrder]
+        
+        do {
+            let data  = try JSONSerialization.data(withJSONObject: postData, options: [])
+            let task =  URLSession.shared.uploadTask(with: urlRequest, from: data){(retData,res,err) in
+                NotificationCenter.default.post(name: Notification.Name("waitMessage"), object: nil,userInfo: ["message": true])
+            }
+            task.resume()
+        }
+        catch{
+        }
+    
+       
+            
+    
+        
+       
+                 
+             }
 }
 
-}
+
 
