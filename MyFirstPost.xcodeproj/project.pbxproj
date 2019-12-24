@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC057AA123B0ED8900F1494B /* TeaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC057AA023B0ED8900F1494B /* TeaData.swift */; };
 		DC20A17123B0968E003DB015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20A17023B0968E003DB015 /* AppDelegate.swift */; };
 		DC20A17323B0968E003DB015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20A17223B0968E003DB015 /* SceneDelegate.swift */; };
 		DC20A17523B0968E003DB015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20A17423B0968E003DB015 /* ViewController.swift */; };
 		DC20A17823B0968E003DB015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20A17623B0968E003DB015 /* Main.storyboard */; };
 		DC20A17A23B0968F003DB015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC20A17923B0968F003DB015 /* Assets.xcassets */; };
 		DC20A17D23B0968F003DB015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC20A17B23B0968F003DB015 /* LaunchScreen.storyboard */; };
+		DC20A18523B096E9003DB015 /* TeaList.txt in Resources */ = {isa = PBXBuildFile; fileRef = DC20A18423B096E9003DB015 /* TeaList.txt */; };
+		DC20A18723B09C99003DB015 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20A18623B09C99003DB015 /* MenuTableViewController.swift */; };
+		DC20A18923B09CEA003DB015 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20A18823B09CEA003DB015 /* ListTableViewController.swift */; };
+		DC20A18B23B09D3B003DB015 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20A18A23B09D3B003DB015 /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC057AA023B0ED8900F1494B /* TeaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaData.swift; sourceTree = "<group>"; };
 		DC20A16D23B0968E003DB015 /* MyFirstPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFirstPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC20A17023B0968E003DB015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC20A17223B0968E003DB015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		DC20A17923B0968F003DB015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC20A17C23B0968F003DB015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC20A17E23B0968F003DB015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC20A18423B096E9003DB015 /* TeaList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TeaList.txt; sourceTree = "<group>"; };
+		DC20A18623B09C99003DB015 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		DC20A18823B09CEA003DB015 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		DC20A18A23B09D3B003DB015 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,12 @@
 				DC20A17023B0968E003DB015 /* AppDelegate.swift */,
 				DC20A17223B0968E003DB015 /* SceneDelegate.swift */,
 				DC20A17423B0968E003DB015 /* ViewController.swift */,
+				DC20A18423B096E9003DB015 /* TeaList.txt */,
+				DC057AA023B0ED8900F1494B /* TeaData.swift */,
 				DC20A17623B0968E003DB015 /* Main.storyboard */,
+				DC20A18A23B09D3B003DB015 /* DetailTableViewController.swift */,
+				DC20A18823B09CEA003DB015 /* ListTableViewController.swift */,
+				DC20A18623B09C99003DB015 /* MenuTableViewController.swift */,
 				DC20A17923B0968F003DB015 /* Assets.xcassets */,
 				DC20A17B23B0968F003DB015 /* LaunchScreen.storyboard */,
 				DC20A17E23B0968F003DB015 /* Info.plist */,
@@ -128,6 +143,7 @@
 				DC20A17D23B0968F003DB015 /* LaunchScreen.storyboard in Resources */,
 				DC20A17A23B0968F003DB015 /* Assets.xcassets in Resources */,
 				DC20A17823B0968E003DB015 /* Main.storyboard in Resources */,
+				DC20A18523B096E9003DB015 /* TeaList.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC20A18B23B09D3B003DB015 /* DetailTableViewController.swift in Sources */,
+				DC20A18723B09C99003DB015 /* MenuTableViewController.swift in Sources */,
 				DC20A17523B0968E003DB015 /* ViewController.swift in Sources */,
+				DC057AA123B0ED8900F1494B /* TeaData.swift in Sources */,
 				DC20A17123B0968E003DB015 /* AppDelegate.swift in Sources */,
+				DC20A18923B09CEA003DB015 /* ListTableViewController.swift in Sources */,
 				DC20A17323B0968E003DB015 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
